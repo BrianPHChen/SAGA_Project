@@ -3,7 +3,7 @@ var WalletProvider = require("truffle-wallet-provider");
 var Wallet = require('ethereumjs-wallet');
 var rinkebyPrivateKey = new Buffer(env.RINKEBY_PRIVATE_KEY, "hex");
 var rinkebyWallet = Wallet.fromPrivateKey(rinkebyPrivateKey);
-console.log(rinkebyWallet.getAddress());
+//console.log(rinkebyWallet.getAddress());
 var rinkebyProvider = new WalletProvider(rinkebyWallet, env.RINKEBY_HTTP_PROVIDER);
 module.exports = {
   networks: {

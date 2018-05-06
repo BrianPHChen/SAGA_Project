@@ -73,4 +73,9 @@ contract SAGAcrowdSale is Ownable {
 	function endOfPreSale() onlyOwner {
 		price = 4000;
 	}
+
+  function finalize (address _realOwner) public onlyOwner {
+    ERC20Basic(SAGA).transfer(_realOwner, ERC20Basic(SAGA).balanceOf(this));
+    _realOwner.transfer(this.balance);
+  }
 }
