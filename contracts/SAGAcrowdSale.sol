@@ -66,6 +66,7 @@ contract SAGAcrowdSale is Ownable {
 
 	function buyTokens () public payable {
 		require (whiteList[msg.sender]);
+    require (msg.value >= 0.1 ether);
 		uint256 tokenAmount = msg.value * price;
 		require(ERC20Basic(SAGA).transfer(msg.sender, tokenAmount));
 	}
