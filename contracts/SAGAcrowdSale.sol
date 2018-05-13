@@ -47,7 +47,7 @@ contract ERC20Basic {
 contract SAGAcrowdSale is Ownable {
 	address  public SAGA;
 	mapping (address => bool) public whiteList;
-	uint256 public price = 5000; // after pre-sale, the price will be 4000
+	uint256 public price = 80000;
 	
 	function SAGAcrowdSale (address _SAGA) {
 		SAGA = _SAGA;
@@ -72,7 +72,7 @@ contract SAGAcrowdSale is Ownable {
 	}
 
 	function endOfPreSale() onlyOwner {
-		price = 4000;
+		price = 60000;
 	}
 
   function finalize (address _realOwner) public onlyOwner {
